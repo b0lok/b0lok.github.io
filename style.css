@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, p, ul, li {
+body, h1, h2, h3, p, ul, li, a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,26 +8,97 @@ body, h1, h2, p, ul, li {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light background for better readability */
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 /* Header */
 header {
-  background-color: #1f1f1f;
-  color: #fff;
   text-align: center;
+  background-color: #1f1f1f; /* Dark header */
+  color: #fff;
   padding: 20px 0;
+  margin-bottom: 20px;
 }
 
-/* Main Section */
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
+header h1 {
+  font-size: 28px;
 }
+
+/* Main Content */
+main {
+  max-width: 800px; /* Center content with a max width */
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for a clean look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+/* Section Titles */
+main h2 {
+  font-size: 22px;
+  color: #1f1f1f;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3ea6ff; /* Add a line below section titles */
+  padding-bottom: 5px;
+}
+
+main h3 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+main p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Lists */
+main ul {
+  margin-left: 20px; /* Indent lists */
+  margin-bottom: 20px;
+  color: #555;
+}
+
+main ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+/* Links */
+a {
+  color: #3ea6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  background: #1f1f1f; /* Dark footer background */
+  color: #fff;
+}
+
+footer a {
+  color: #3ea6ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 
 /* Intro Section */
 .intro {
@@ -90,11 +161,4 @@ main {
   background-color: #66b7ff;
 }
 
-/* Footer */
-footer {
-  background-color: #1f1f1f;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 20px;
-}
+
