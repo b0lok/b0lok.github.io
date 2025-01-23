@@ -1,0 +1,100 @@
+/* General Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Main Section */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-icon {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Features Section */
+.features {
+  margin-bottom: 30px;
+}
+
+.features h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.features ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+}
+
+/* Download Section */
+.download {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.download h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.download button {
+  background-color: #3ea6ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download button:hover {
+  background-color: #66b7ff;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
