@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Dual Language Subtitles</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduBlake</title>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- HEADER/NAV -->
   <header>
-    <h1>Netflix Dual Language Subtitles</h1>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <!-- Replace 'assets/DualSubLogo.png' with your actual image path -->
+          <img src="assets/DualSubLogo.png" alt="EduBlake Logo">
+        </a>
+        <h1>EduBlake</h1>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="intro">
-      <img src="icon.png" alt="App Icon" class="app-icon">
-      <p>
-        Enhance your Netflix experience with dual-language subtitles. Switch seamlessly between English and Korean to learn languages while watching your favorite shows and movies!
-      </p>
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>Welcome to EduBlake</h2>
+    <p>Discover our suite of educational and productivity apps.</p>
+    <a href="#apps" class="btn">See Our Apps</a>
+  </section>
 
-    <section class="features">
-      <h2>Features</h2>
-      <ul>
-        <li>English and Korean subtitles displayed together</li>
-        <li>Easy-to-use Safari extension</li>
-        <li>Perfect for language learners and enthusiasts</li>
-      </ul>
-    </section>
+  <!-- APP LIBRARY SCROLL WHEEL -->
+  <section id="apps" class="apps">
+    <h3>Our App Library</h3>
+    <div class="app-scroll">
+      <!-- Example App (Dual Subtitles for Netflix) -->
+      <div class="app-card">
+        <img src="assets/DualSubLogo.png" alt="Dual Subtitles Logo">
+        <h4>Dual Subtitles for Netflix</h4>
+        <p>Enhance your language learning with simultaneous subtitles.</p>
+        <!-- Example button leading to App Store (use your actual link) -->
+        <a href="#" class="btn store-btn">Download on the App Store</a>
+      </div>
 
-    <section class="download">
-      <h2>Get the App</h2>
-      <p>Available for macOS and iOS. Download now and start your dual-language journey!</p>
-      <button id="downloadButton">Download for Safari</button>
-    </section>
-  </main>
+      <!-- Future App Placeholders -->
+      <div class="app-card placeholder">
+        <h4>Future App #1</h4>
+      </div>
+      <div class="app-card placeholder">
+        <h4>Future App #2</h4>
+      </div>
+      <div class="app-card placeholder">
+        <h4>Future App #3</h4>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Blake Miller. All rights reserved.</p>
+    <p>&copy; 2025 EduBlake. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
