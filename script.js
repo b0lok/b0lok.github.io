@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const subtitle1 = document.getElementById('subtitle1');
-  const subtitle2 = document.getElementById('subtitle2');
+  const video = document.getElementById('netflix-video');
+  const subtitleEn = document.getElementById('dual-subtitle-en');
+  const subtitleKo = document.getElementById('dual-subtitle-ko');
 
-  // Example subtitles timeline
+  // Subtitle simulation
   const subtitles = [
-    { time: 1, text1: 'Hello, welcome to Netflix!', text2: '안녕하세요, 넷플릭스에 오신 것을 환영합니다!' },
-    { time: 5, text1: 'Enjoy learning languages.', text2: '언어 학습을 즐기세요.' },
-    { time: 10, text1: '', text2: '' },
+    { start: 1, end: 4, en: "Welcome to Netflix Replica.", ko: "넷플릭스 복제본에 오신 것을 환영합니다." },
+    { start: 5, end: 8, en: "This is the English Subtitle.", ko: "이것은 영어 자막입니다." },
+    { start: 10, end: 14, en: "Enjoy testing your extension.", ko: "확장을 테스트하세요." },
   ];
 
-  const videoPlayer = document.getElementById('videoPlayer');
+  video.addEventListener('timeupdate', () => {
+    const currentTime = video.currentTime;
+    const currentSubtitle = subtitles.find(sub => currentTime >= sub.start && currentTime <= sub.end);
 
-  videoPlayer.addEventListener('timeupdate', () => {
-    const currentTime = Math.floor(videoPlayer.currentTime);
-    const subtitle = subtitles.find((s) => s.time === currentTime);
-
-    if (subtitle) {
-      subtitle1.textContent = subtitle.text1;
-      subtitle2.textContent = subtitle.text2;
+    if (currentSubtitle) {
+      subtitleEn.textContent = currentSubtitle.en;
+      subtitleKo.textContent = currentSubtitle.ko;
+    } else {
+      subtitleEn.textContent = "";
+      subtitleKo.textContent = "";
     }
   });
 });
