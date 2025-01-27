@@ -23,3 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+  // Fetch subtitles dynamically and store them in localStorage
+  async function preloadSubtitles() {
+    const subtitles = [
+      { key: 'subtitle-en', url: 'subtitles-en.vtt' },
+      { key: 'subtitle-ko', url: 'subtitles-ko.vtt' },
+    ];
+
+    for (const { key, url } of subtitles) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          console.error(`Failed to fetch ${url}:`, response.statusText);
+          continue;
+        }
+        const text = await response.text();
+        localStorage.setItem(key, text);
+        console.log(`Loaded ${key} into localStorage.`);
+      } catch (error) {
+        console.error(`Error fetching ${url}:`, error);
+      }
+    }
+  }
+
+  // Call the preload function on page load
+  preloadSubtitles();
