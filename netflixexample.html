@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Replica</title>
+  <title>Netflix Test Replica</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="navbar">
-    <img src="Netflix.png" alt="Netflix Logo" class="logo">
-  </header>
-
-  <!-- Video Player -->
-  <div class="video-container">
-    <video id="netflix-video" controls>
-      <source src="Assets/sample-video.mp4" type="video/mp4">
-    </video>
+  <!-- Netflix-like video player structure -->
+  <div class="nf-player-container">
+    <div class="nf-video-player">
+      <video class="nf-video-element" controls>
+        <source src="sample-video.mp4" type="video/mp4">
+      </video>
+      <div class="nf-subtitle-overlay">
+        <!-- Subtitle containers -->
+        <div class="player-timedtext-text-container">
+          <div class="player-timedtext-text">
+            <span class="nf-subtitle-text" id="nf-subtitle-en">English Subtitle</span>
+            <br />
+            <span class="nf-subtitle-text" id="nf-subtitle-ko">Korean Subtitle</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Test Replica. For Testing Only.</p>
-  </footer>
 </body>
 </html>
