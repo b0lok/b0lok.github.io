@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Replica</title>
+  <link rel="stylesheet" href="stylesdev.css" />
+</head>
+<body>
+  <!-- Fake Netflix Header -->
+  <header class="nf-header">
+    <div class="nf-logo">Netflix</div>
+  </header>
+
+  <!-- Fake Netflix Video Player Area -->
+  <section class="nf-player-container">
+    <!-- A mock video tag, with Netflix-like class names -->
+    <video 
+      class="html5-main-video" 
+      src="https://www.w3schools.com/html/mov_bbb.mp4" 
+      controls
+      poster="https://via.placeholder.com/800x450.png?text=Fake+Netflix+Video">
+      <!-- You can add real <track> tags for demonstration if you want them natively visible:
+      <track kind="subtitles" src="someSubtitleFile_en.vtt" srclang="en" label="English" default>
+      <track kind="subtitles" src="someSubtitleFile_ko.vtt" srclang="ko" label="Korean">
+      -->
+    </video>
+
+    <!-- Show "two visible subtitles" as if on top of the video (HTML overlays) -->
+    <div class="subtitle-overlay top-subtitle">
+      English Subtitle (Fake by default)
+    </div>
+    <div class="subtitle-overlay bottom-subtitle">
+      Korean Subtitle (Fake by default)
+    </div>
+  </section>
+
+  <!-- Fake Netflix JSON script load -->
+  <script src="mockResponse.js"></script>
+
+  <!-- Explanation text, purely for clarity -->
+  <section class="nf-explanation">
+    <h2>Netflix Replica Page</h2>
+    <p>
+      This is a mock environment so our extension can test:
+      <ul>
+        <li>Intercepting <code>JSON.parse()</code> calls for <code>timedtexttracks</code></li>
+        <li>Fetching subtitle files <code>someSubtitleFile_en.xml</code> and <code>someSubtitleFile_ko.xml</code></li>
+        <li>Rendering or storing them in <code>localStorage</code></li>
+      </ul>
+    </p>
+    <p>
+      If your extension is active and allowed to run on this domain, it will detect the
+      <code>movieId</code> and attempt to fetch the subtitles from the URLs below.
+    </p>
+  </section>
+</body>
+</html>

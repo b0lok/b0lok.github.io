@@ -1,0 +1,73 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414; /* Netflix-like dark background */
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Fake Netflix Header */
+.nf-header {
+  background: #141414;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nf-logo {
+  font-size: 1.5rem;
+  color: #e50914;
+  font-weight: bold;
+}
+
+/* Player Container */
+.nf-player-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 1rem auto;
+  background: #000;
+}
+
+.html5-main-video {
+  width: 100%;
+  height: auto;
+}
+
+/* Fake Overlaid Subtitles */
+.subtitle-overlay {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.top-subtitle {
+  top: 10%;
+}
+
+.bottom-subtitle {
+  bottom: 10%;
+}
+
+/* Explanation Section */
+.nf-explanation {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #181818;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.nf-explanation h2 {
+  margin-bottom: 1rem;
+}
