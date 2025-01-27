@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netflix Replica</title>
-  <link rel="stylesheet" href="stylesdev.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header -->
@@ -12,25 +12,16 @@
     <img src="Netflix.png" alt="Netflix Logo" class="logo">
   </header>
 
-  <!-- Video Player Section -->
+  <!-- Video Player -->
   <div class="video-container">
     <video id="netflix-video" controls>
       <source src="Assets/sample-video.mp4" type="video/mp4">
-      <!-- Subtitle Tracks -->
-      <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English" default>
-      <track src="subtitles-ko.vtt" kind="subtitles" srclang="ko" label="Korean">
     </video>
-    <div class="subtitles">
-      <p id="dual-subtitle-en" class="subtitle">English Subtitle Text</p>
-      <p id="dual-subtitle-ko" class="subtitle">Korean Subtitle Text</p>
-    </div>
   </div>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Test Replica. For Testing Only.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
