@@ -1,53 +1,47 @@
-/* General Reset */
-body, h1, h2, p, video {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
+  background-color: black;
+  color: white;
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
 }
 
-.navbar {
-  background-color: #141414;
-  padding: 10px 20px;
-}
-
-.logo {
-  height: 30px;
-}
-
-/* Video Container */
-.video-container {
+.nf-player-container {
+  position: relative;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  position: relative;
 }
 
-video {
+.nf-video-player {
+  position: relative;
   width: 80%;
   max-width: 900px;
-  border-radius: 8px;
+}
+
+.nf-video-element {
+  width: 100%;
+  border-radius: 10px;
   outline: none;
 }
 
-/* Subtitles */
-.subtitles {
+.nf-subtitle-overlay {
   position: absolute;
   bottom: 10%;
-  width: 80%;
-  max-width: 900px;
+  width: 100%;
   text-align: center;
   pointer-events: none;
 }
 
-.subtitle {
+.player-timedtext-text-container {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nf-subtitle-text {
   font-size: 18px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
