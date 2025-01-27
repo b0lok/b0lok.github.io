@@ -3,29 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Simulation For Testing</title>
+  <title>Netflix Replica</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="navbar">
     <img src="netflix-logo.png" alt="Netflix Logo" class="logo">
   </header>
 
-  <main class="video-container">
-    <div class="video-wrapper">
-      <video id="videoPlayer" controls>
-        <source src="example-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div id="subtitles" class="subtitles-container">
-        <p id="subtitle1" class="subtitle">English Subtitle Here</p>
-        <p id="subtitle2" class="subtitle">Korean Subtitle Here</p>
-      </div>
+  <!-- Video Player Section -->
+  <div class="video-container">
+    <video id="netflix-video" controls>
+      <source src="sample-video.mp4" type="video/mp4">
+      <!-- Subtitle Tracks -->
+      <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English" default>
+      <track src="subtitles-ko.vtt" kind="subtitles" srclang="ko" label="Korean">
+    </video>
+    <div class="subtitles">
+      <p id="dual-subtitle-en" class="subtitle">English Subtitle Text</p>
+      <p id="dual-subtitle-ko" class="subtitle">Korean Subtitle Text</p>
     </div>
-  </main>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Blake Miller. All rights reserved. This is a replica for testing purposes only.</p>
+    <p>&copy; 2025 Test Replica. For Testing Only.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
