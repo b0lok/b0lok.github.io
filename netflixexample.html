@@ -17,78 +17,16 @@
   <section data-uia="player" class="nf-player-container">
     <div data-uia="video-canvas">
       <video 
+        id="netflix-video"
         class="html5-main-video" 
         src="https://www.w3schools.com/html/mov_bbb.mp4" 
-        controls
+        controls 
         poster="Netflix.png">
-        <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
-        <track kind="subtitles" src="subtitles-ko.vtt" srclang="ko" label="Korean">
       </video>
     </div>
   </section>
-  
 
-  <!-- Prepopulate Local Storage -->
-  <script>
-    async function setupLocalStorage() {
-      localStorage.setItem('currentMovieId', '123456');
-      localStorage.setItem(
-        'availableLanguages',
-        JSON.stringify([
-          { id: 'en', description: 'English' },
-          { id: 'ko', description: 'Korean' },
-        ])
-      );
-
-      const subtitles = [
-        { key: 'subtitle-en', url: 'subtitles-en.vtt' },
-        { key: 'subtitle-ko', url: 'subtitles-ko.vtt' },
-      ];
-
-      subtitles.forEach(async ({ key, url }) => {
-        try {
-          const response = await fetch(url);
-          if (!response.ok) {
-            console.error(`Failed to fetch ${url}:`, response.statusText);
-            return;
-          }
-          const text = await response.text();
-          localStorage.setItem(key, text);
-          console.log(`Loaded ${key} into localStorage.`);
-        } catch (error) {
-          console.error(`Error fetching ${url}:`, error);
-        }
-      });
-    }
-    setupLocalStorage();
-  </script>
-
-  <!-- Emulate Netflix DOM Structure -->
-  <script>
-    function emulateNetflixStructure() {
-      const playerContainer = document.createElement('div');
-      playerContainer.setAttribute('data-uia', 'player');
-
-      const videoCanvas = document.createElement('div');
-      videoCanvas.setAttribute('data-uia', 'video-canvas');
-      const video = document.querySelector('video');
-      if (video) {
-        videoCanvas.appendChild(video);
-        playerContainer.appendChild(videoCanvas);
-        document.body.appendChild(playerContainer);
-      }
-    }
-    emulateNetflixStructure();
-  </script>
-
-<script>
-  // Simulate sending settings to the extension
-  window.addEventListener('getSettings', () => {
-    const settings = { preferredLanguage: 'en' }; // Set preferred language
-    window.dispatchEvent(new CustomEvent('settingsReceived', { detail: settings }));
-    console.debug('Mock settings sent:', settings);
-  });
-</script>
-
+  <!-- Consolidated Script -->
+  <script src="netflixexample.js"></script>
 </body>
 </html>
