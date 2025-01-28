@@ -14,17 +14,19 @@
   </header>
 
   <!-- Video Section -->
-  <section class="nf-player-container">
-    <video 
-      class="html5-main-video" 
-      src="https://www.w3schools.com/html/mov_bbb.mp4" 
-      controls
-      poster="Netflix.png">
-      <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
-      <track kind="subtitles" src="subtitles-ko.vtt" srclang="ko" label="Korean">
-    </video>
-    <div class="player-timedtext-text-container"></div>
+  <section data-uia="player" class="nf-player-container">
+    <div data-uia="video-canvas">
+      <video 
+        class="html5-main-video" 
+        src="https://www.w3schools.com/html/mov_bbb.mp4" 
+        controls
+        poster="Netflix.png">
+        <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
+        <track kind="subtitles" src="subtitles-ko.vtt" srclang="ko" label="Korean">
+      </video>
+    </div>
   </section>
+  
 
   <!-- Prepopulate Local Storage -->
   <script>
