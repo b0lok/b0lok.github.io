@@ -5,57 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Netflix Replica</title>
   <link rel="stylesheet" href="stylesdev.css" />
-  <link rel="icon" href="./favicon.ico" type="Netflix.png">
-
+  <link rel="icon" href="./favicon.ico" type="image/png">
 </head>
 <body>
-  <!-- Fake Netflix Header -->
+  <!-- Netflix Header -->
   <header class="nf-header">
     <div class="nf-logo">Netflix</div>
   </header>
 
-  <!-- Fake Netflix Video Player Area -->
+  <!-- Video Section -->
   <section class="nf-player-container">
-    <!-- A mock video tag, with Netflix-like class names -->
     <video 
       class="html5-main-video" 
       src="https://www.w3schools.com/html/mov_bbb.mp4" 
       controls
       poster="Netflix.png">
-      
-      <!-- Native subtitle tracks -->
       <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
       <track kind="subtitles" src="subtitles-ko.vtt" srclang="ko" label="Korean">
     </video>
-
-    <!-- Optional Overlays: if you want to visually show two subtitles 
-         at once, or demonstrate your extension’s custom overlay. -->
-    <div class="subtitle-overlay top-subtitle">
-      English Subtitle (Enabled by the extension for Dual Subtitles)
-    </div>
-    <div class="subtitle-overlay bottom-subtitle">
-      Korean Subtitle (By default this should be on)
-    </div>
+    <div class="player-timedtext-text-container"></div>
   </section>
 
-  <!-- Fake Netflix JSON script load -->
-  <script src="mockResponse.js"></script>
+  <!-- Prepopulate Local Storage -->
+  <script>
+    async function setupLocalStorage() {
+      localStorage.setItem('currentMovieId', '123456');
+      localStorage.setItem(
+        'availableLanguages',
+        JSON.stringify([
+          { id: 'en', description: 'English' },
+          { id: 'ko', description: 'Korean' },
+        ])
+      );
 
-  <!-- Explanation text, purely for clarity -->
-  <section class="nf-explanation">
-    <h2>Netflix Replica Page</h2>
-    <p>
-      This is a mock environment so our extension can test:
-      <ul>
-        <li>Intercepting <code>JSON.parse()</code> calls for <code>timedtexttracks</code></li>
-        <li>Fetching subtitle files <code>someSubtitleFile_en.xml</code> / <code>.vtt</code> and <code>someSubtitleFile_ko.xml</code> / <code>.vtt</code></li>
-        <li>Rendering or storing them in <code>localStorage</code></li>
-      </ul>
-    </p>
-    <p>
-      If your extension is active and allowed to run on this domain, it will detect the
-      <code>movieId</code> and attempt to fetch the subtitles from the mock response's URLs.
-    </p>
-  </section>
+      const subtitles = [
+        { key: 'subtitle-en', url: 'subtitles-en.vtt' },
+        { key: 'subtitle-ko', url: 'subtitles-ko.vtt' },
+      ];
+
+      subtitles.forEach(async ({ key, url }) => {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            console.error(`Failed to fetch ${url}:`, response.statusText);
+            return;
+          }
+          const text = await response.text();
+          localStorage.setItem(key, text);
+          console.log(`Loaded ${key} into localStorage.`);
+        } catch (error) {
+          console.error(`Error fetching ${url}:`, error);
+        }
+      });
+    }
+    setupLocalStorage();
+  </script>
+
+  <!-- Emulate Netflix DOM Structure -->
+  <script>
+    function emulateNetflixStructure() {
+      const playerContainer = document.createElement('div');
+      playerContainer.setAttribute('data-uia', 'player');
+
+      const videoCanvas = document.createElement('div');
+      videoCanvas.setAttribute('data-uia', 'video-canvas');
+      const video = document.querySelector('video');
+      if (video) {
+        videoCanvas.appendChild(video);
+        playerContainer.appendChild(videoCanvas);
+        document.body.appendChild(playerContainer);
+      }
+    }
+    emulateNetflixStructure();
+  </script>
 </body>
 </html>
