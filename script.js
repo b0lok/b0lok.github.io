@@ -50,3 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Call the preload function on page load
   preloadSubtitles();
+
+
+  // Mimic available languages
+  localStorage.setItem(
+    'availableLanguages',
+    JSON.stringify([
+      'en', 'ko', 'es', 'fr', 'de', 'it', 'pt-BR', 'ru', 'zh-Hans', 'zh-Hant'
+    ])
+  );
+
+  console.debug('Available languages set in localStorage:', JSON.parse(localStorage.getItem('availableLanguages')));
+

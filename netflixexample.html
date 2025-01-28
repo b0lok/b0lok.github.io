@@ -80,5 +80,15 @@
     }
     emulateNetflixStructure();
   </script>
+
+<script>
+  // Simulate sending settings to the extension
+  window.addEventListener('getSettings', () => {
+    const settings = { preferredLanguage: 'en' }; // Set preferred language
+    window.dispatchEvent(new CustomEvent('settingsReceived', { detail: settings }));
+    console.debug('Mock settings sent:', settings);
+  });
+</script>
+
 </body>
 </html>
